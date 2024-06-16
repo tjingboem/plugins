@@ -25,7 +25,7 @@ i_peer link_create [i_bpm]
 ## Output
 
 
-## Execution Time
+## Initialization
 
 * i_bpm -- Initial tempo of the session, in beats per minute. Has no effect unless this is the first peer in the session. The default value is 60.
 
