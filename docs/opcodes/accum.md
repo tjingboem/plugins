@@ -18,12 +18,6 @@ Creates a peer in an Ableton Link network session. The first peer in a session d
 i_peer link_create [i_bpm]
 
 ```
-    
-## Arguments
-
-
-## Output
-
 
 ## Initialization
 
