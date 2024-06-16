@@ -3,18 +3,6 @@
 
 This is a collection of plugins for [csound](https://csound.com/)
 
-# Installation
-
-See [Installation](Installation.md)
-
-----
-
-
-## risset
-
-Opcodes to access risset package metadata
-
-* [risset](opcodes/risset.md): Get information from risset's package manager 
 
 
 ## Ableton Link opcodes
