@@ -18,7 +18,7 @@ Opcodes to access risset package metadata
 * [risset](opcodes/risset.md): Get information from risset's package manager 
 
 
-## poly
+## Ableton Link opcodes
 
 Multiple (parallel or sequential) instances of an opcode
 
