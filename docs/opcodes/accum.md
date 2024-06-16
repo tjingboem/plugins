@@ -1,60 +1,99 @@
-# accum
+# link_create
 
 ## Abstract
 
-Simple accumulator of scalar values
+link_create — Creates a peer in an Ableton Link network session.
 
 
 ## Description
 
-`accum` can be used together with `changed`, `changed2`, `metro`, etc, 
-to convert a binary trigger to an incremental one. Incremental triggers
-are used by many opcodes (`printf`, for example), so by doing `accum(changed(kvar))`
-it is possible to use binary triggers wherever an incremental trigger is expected.
-`accum` outputs its current value and increments it afterwords. 
+Plugin opcode in ableton_link_opcodes. This opcode is part of the plugin repository and has to be installed separately. The plugin repository can be found here: https://github.com/csound/plugins
+
+Creates a peer in an Ableton Link network session. The first peer in a session determines the initial tempo of the session. The value returned must be passed as the first parameter to all subsequent Ableton Link opcode calls for this peer.
 
 ## Syntax
 
 
 ```csound
-kout accum kstep, initial=0, kreset=0
-aout accum kstep, initial=0, kreset=0
+i_peer link_create [i_bpm]
 
 ```
     
 ## Arguments
 
-* **kstep**: the step to add. This value will be added at each iteration (at each k-cycle 
-    for `accum:k` and at each sample for `accum:a`)
-* **initial**: initial value of the accumulator
-* **kreset**: if 1, the accummulator is reset to the initial value
 
 ## Output
 
-* **kout**: accumulated value
 
 ## Execution Time
 
-* Init 
+* i_bpm -- Initial tempo of the session, in beats per minute. Has no effect unless this is the first peer in the session. The default value is 60.
+
+* i_peer -- The Ableton Link peer object returned for use with the other Ableton Link opcodes.
 
 ## Examples
 
 
 ```csound
 
-kout accum 1, 0    ; outputs 0, 1, 2, 3, 4...
+<CsoundSynthesizer>
+<CsLicense>
+Run the Ableton Link "LinkHut" example application, or some other 
+Ableton Link peer, while you run this CSD to see what happens.
+</CsLicense>
+<CsOptions>
+-m0 -d -odac 
+</CsOptions>
+<CsInstruments>
+sr = 44100
+ksmps = 10
+nchnls = 2
 
-; Play a sample with variable speed, stop the event when finished
-aindex accum 1
-kspeed = linseg:k(0.5, ilen, 2)
-ilen = ftlen(ift)
-aindex *= kspeed
-asig table3 aindex, ift
-if aindex[0] >= ilen - (ksmps*kspeed) then
-    turnoff
+alwayson "LinkMonitor"
+
+gi_peer link_create 72
+gk_beat init 0
+
+instr Beep
+asignal oscils 20000, p4, 0
+outs asignal, asignal
+endin
+
+instr TempoChange
+link_tempo_set gi_peer, 80
+endin
+
+instr LinkEnable
+i_enabled = p4
+link_enable gi_peer, i_enabled
+endin
+
+instr LinkMonitor
+i_kperiod_seconds = ksmps / sr
+printf_i "kperiod: %9.6f seconds.\n", 1, i_kperiod_seconds
+printf_i "gi_peer: %g\n", 1, gi_peer
+link_enable gi_peer, 1
+k_trigger, gk_beat, k_phase, k_time link_metro gi_peer, 1
+k_peers link_peers gi_peer
+k_tempo link_tempo_get gi_peer
+k_enabled link_is_enabled gi_peer
+k_hz = 1000
+if floor(gk_beat % 4) == 0 then
+k_hz = 3000
+else
+k_hz = 2000
 endif
-ifade = 1/ksmps
-out asig * linsegr(0, ifade, 1, ifade, 0)
+schedkwhen k_trigger, 0, 1, "Beep", 0, 0.01, k_hz
+printf "LinkMonitor: gi_peer: %g k_enabled: %9.4f k_trigger: %9.4f beat: %9.4f k_phase: %9.4f time: %9.4f tempo: %9.4f peers: %3d\n", k_trigger, gi_peer, k_enabled, k_trigger, gk_beat, k_phase, k_time, k_tempo, k_peers
+endin
+</CsInstruments>
+<CsScore>
+f 0 360
+i "TempoChange" 10 80
+i "LinkEnable"  20 1 0
+i "LinkEnable"  30 1 1
+</CsScore>
+</CsoundSynthesizer>
 
 ```
 
@@ -97,4 +136,4 @@ i1 0 0.1
 
 ## Credits
 
-Eduardo Moguillansky, 2019
+Michael Gogins
