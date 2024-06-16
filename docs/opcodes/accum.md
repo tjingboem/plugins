@@ -6,7 +6,6 @@ link_create — Creates a peer in an Ableton Link network session.
 
 ## Description
 
-Plugin opcode in ableton_link_opcodes. This opcode is part of the plugin repository and has to be installed separately. The plugin repository can be found here: https://github.com/csound/plugins
 
 Creates a peer in an Ableton Link network session. The first peer in a session determines the initial tempo of the session. The value returned must be passed as the first parameter to all subsequent Ableton Link opcode calls for this peer.
 
