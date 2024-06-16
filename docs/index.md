@@ -1,6 +1,5 @@
-# Csound Plugins
+# Csound Plugins documentation
 
-Welcome to the csound-plugins documentation 
 
 This is a collection of plugins for [csound](https://csound.com/)
 
