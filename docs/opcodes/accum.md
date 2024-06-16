@@ -1,6 +1,5 @@
 # link_create
 
-## Abstract
 
 link_create — Creates a peer in an Ableton Link network session.
 
