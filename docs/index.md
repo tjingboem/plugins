@@ -9,10 +9,16 @@ This is a collection of plugins for [csound](https://csound.com/)
 
 Multiple (parallel or sequential) instances of an opcode
 
-* [link_create](opcodes/link_create.md): poly creates and controls multiple parallel version of an opcode 
-* [link_enable](opcodes/link_enable.md): polyseq creates and controls multiple sequential version of an opcode 
-* [poly0](opcodes/poly0.md): poly0 creates and controls multiple parallel version of an opcode with no outputs 
-* [defer](opcodes/defer.md): Run an opcode at the end of current event 
+* [link_create](opcodes/link_create.md): Creates an Ableton Link peer object.
+* [link_enable](opcodes/link_enable.md): Enable/disable synchronization with the network Ableton Link session tempo and beat.
+* [link_is_enabled](opcodes/link_is_enabled.md): Returns whether or not this Ableton Link peer has joined the network session. 
+* [link_tempo_set](opcodes/link_tempo_set.md): Sets the tempo for the network's Ableton Link session.
+* [link_tempo_get](opcodes/link_tempo_get.md): Returns the tempo of the network's Ableton Link session.
+* [link_beat_get](opcodes/link_beat_get.md): Returns the beat, phase, and current time of Ableton Link for this session for a given quantum.
+* [link_metro](opcodes/link_metro.md): Returns a trigger that is 1 on the beat and 0 otherwise along with the beat, phase, and current time of Ableton Link for this session for a given quantum.
+* [link_beat_request](opcodes/link_beat_request.md): Requests a beat with a specific number at a specific time at a given quantum.
+* [link_beat_force](opcodes/link_beat_force.md): Forces the network Ableton Link session to adopt a beat with a specific number at a specific time at a given quantum.
+* [link_peers](opcodes/link_peers.md): Returns the number of peers currently joined in the network Ableton Link session.
 
 
 ## klib
