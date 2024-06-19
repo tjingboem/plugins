@@ -10,7 +10,7 @@ This is a collection of plugins for [csound](https://csound.com/)
 Multiple (parallel or sequential) instances of an opcode
 
 * [link_create](opcodes/link_create.md): poly creates and controls multiple parallel version of an opcode 
-* [polyseq](opcodes/polyseq.md): polyseq creates and controls multiple sequential version of an opcode 
+* [link_enable](opcodes/link_enable.md): polyseq creates and controls multiple sequential version of an opcode 
 * [poly0](opcodes/poly0.md): poly0 creates and controls multiple parallel version of an opcode with no outputs 
 * [defer](opcodes/defer.md): Run an opcode at the end of current event 
 
