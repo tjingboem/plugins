@@ -7,7 +7,7 @@ This is a collection of plugins for [csound](https://csound.com/)
 
 ## Ableton Link opcodes
 
-Multiple (parallel or sequential) instances of an opcode
+A technology that synchronizes musical beat, tempo, and phase across multiple applications running on one or more devices.
 
 * [link_create](opcodes/link_create.md): Creates an Ableton Link peer object.
 * [link_enable](opcodes/link_enable.md): Enable/disable synchronization with the network Ableton Link session tempo and beat.
@@ -21,53 +21,19 @@ Multiple (parallel or sequential) instances of an opcode
 * [link_peers](opcodes/link_peers.md): Returns the number of peers currently joined in the network Ableton Link session.
 
 
-## klib
+## Bela
 
-A hashtable for csound
+A sound and sensor technology
 
-* [dict_new](opcodes/dict_new.md): Create a hashtable 
-* [dict_dump](opcodes/dict_dump.md): Dumps the contents of this dict as a string 
-* [dict_free](opcodes/dict_free.md): Free a hashtable 
-* [dict_get](opcodes/dict_get.md): Get a value from a hashtable 
-* [dict_geti](opcodes/dict_geti.md): Get a string value from a hashtable at init time 
-* [dict_loadstr](opcodes/dict_loadstr.md): Creates and fills a new dict from a string definition 
-* [dict_set](opcodes/dict_set.md): Set a value from a hashtable 
-* [dict_size](opcodes/dict_size.md): Returns the number of key:value pairs in a dict 
-* [dict_query](opcodes/dict_query.md): Query different properties of a dict 
-* [dict_exists](opcodes/dict_exists.md): Returns 1 if the dict exists, 0 otherwise 
-* [dict_print](opcodes/dict_print.md): Prints the contents of a dict 
-* [dict_iter](opcodes/dict_iter.md): Iterate over the key-value pairs of a dict 
-* [dict_del](opcodes/dict_del.md): Remove a key:value pair from a hashtable 
-* [sref](opcodes/sref.md): Insert a string into a global registry and return a reference to it 
-* [sderef](opcodes/sderef.md): Retrieves a read-only string from the cache 
-* [pool_new](opcodes/pool_new.md): Create an empty  pool 
-* [pool_gen](opcodes/pool_gen.md): Create a pool and fill it with values 
-* [pool_pop](opcodes/pool_pop.md): Pop (get) an item from a pool 
-* [pool_push](opcodes/pool_push.md): Push an item into a pool 
-* [pool_size](opcodes/pool_size.md): Returns the size of a pool 
-* [pool_capacity](opcodes/pool_capacity.md): Returns the capacity of a pool 
-* [pool_at](opcodes/pool_at.md): Returns the item of a pool at a given index 
-* [pool_isfull](opcodes/pool_isfull.md): Returns 1 if the pool is full 
+* [trill](opcodes/trill.md): Create a hashtable 
 
 
-## pathtools
+## CUDA
 
-Cross-platform path handling and string opcodes
+A parallel computing platform and application programming interface that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing,
 
-* [findFileInPath](opcodes/findFileInPath.md): Find a file inside the search paths of the csound environment 
-* [getEnvVar](opcodes/getEnvVar.md): Get the value of an environment variable 
-* [pathAbsolute](opcodes/pathAbsolute.md): Returns the absolute path of a file 
-* [pathIsAbsolute](opcodes/pathIsAbsolute.md): Returns 1 if the path of a file is absolute 
-* [pathJoin](opcodes/pathJoin.md): Join two parts of a path according to the current platform 
-* [pathNative](opcodes/pathNative.md): Convert a path to its native version 
-* [pathSplit](opcodes/pathSplit.md): Split a path into directory and basename 
-* [pathSplitk](opcodes/pathSplitk.md): Split a path into directory and basename at perf-time 
-* [pathSplitExt](opcodes/pathSplitExt.md): Split a path into prefix and extension 
-* [pathSplitExtk](opcodes/pathSplitExtk.md): Split a path into prefix and extension at performance time 
-* [scriptDir](opcodes/scriptDir.md): Get the directory of the loaded orc/csd file 
-* [sysPlatform](opcodes/sysPlatform.md): Get a string description of the current system platform 
-* [strsplit](opcodes/strsplit.md): Split a string at a given separator 
-* [strjoin](opcodes/strjoin.md): Concatenate any number of strings 
+* [cudanal](opcodes/cudanal.md): Generate an fsig from a mono audio source ain, using phase vocoder overlap-add analysis and GPU hardware.
+* [cudasynth](opcodes/cudasynth.md): Synthesis by additive synthesis and inverse FFT. 
 
 
 ## beosc
