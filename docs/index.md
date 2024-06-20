@@ -78,17 +78,31 @@ The fluid family of opcodes wraps Peter Hannape's SoundFont 2 player
 * [fluidProgramSelect](opcodes/fluidProgramSelect.md): Assigning presets from a SoundFont to a FluidSynth engine's MIDI channel. 
 * [fluidSetInterpMethod](opcodes/fluidSetInterpMethod.md): setting interpolation method for a channel in a FluidSynth engine.
 
-  ## Fluid opcodes
+  ## HDF5
+
+  High-performance data management and storage suite
   
-* [findarray](opcodes/findarray.md): Find an element in an array 
-* [frac2int](opcodes/frac2int.md): Convert the fractional part of a number into an integer 
-* [ftfill](opcodes/ftfill.md): create a table and fill it with values (like fillarray but for f-tables) 
-* [ftfind](opcodes/ftfind.md): Find an element in a table 
-* [ftnew](opcodes/ftnew.md): creates a new table of a given size 
-* [ftsetparams](opcodes/ftsetparams.md): Set metadata parameters of a table, as if it was loaded via GEN1 
-* [initerror](opcodes/initerror.md): Throws an error message at init 
-* [interp1d](opcodes/interp1d.md): Interpolate between elements of an array/table 
-* [lfnoise](opcodes/lfnoise.md): low frequency, band-limited noise 
+* [hdf5read](opcodes/hdf5read.md): HDF5 file streaming
+* [hdf5write](opcodes/hdf5write.md): HDF5 file output
+
+
+  ## Image opcodes
+
+  Image processing opcodes for sonification
+
+* [imagecreate](opcodes/imagecreate.md): Create an empty image of a given size.
+* [imagesize](opcodes/imagesize.md): Return the width and height of a previously opened or created image.
+* [imagegetpixel](opcodes/imagegetpixel.md): Return the RGB pixel values of a previously opened or created image.
+* [imagesetpixel](opcodes/imagesetpixel.md): Set the RGB value of a pixel inside a previously opened or created image.
+* [imagesave](opcodes/imagesave.md): Save a previously created image.
+* [imageload](opcodes/imageload.md): Load an image.
+* [imagefree](opcodes/imagefree.md): Frees memory allocated for a previously loaded or created image.
+
+
+  ## jackops
+
+  Image processing opcodes for sonification
+  
 * [linenv](opcodes/linenv.md): A triggerable linear envelope with sustain segment 
 * [loadnpy](opcodes/loadnpy.md): Load an array (of any number of dimensions) saved as a .npy file 
 * [memview](opcodes/memview.md): Create a view into a table or another array 
