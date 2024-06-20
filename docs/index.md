@@ -36,6 +36,13 @@ A sound and sensor technology
 * [trill](opcodes/trill.md): Create a hashtable 
 
 
+## chua
+
+opcodes using libsndfile
+
+* [chuap](opcodes/chuap.md): Simulates Chua's oscillator, an LRC oscillator with an active resistor, proved capable of bifurcation and chaotic attractors.
+
+
 ## CUDA
 
 A parallel computing platform and application programming interface that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing,
@@ -54,25 +61,6 @@ The Faust opcodes allows access from within Csound to the Faust language. Faust 
 * [faustctl](opcodes/faustctl.md): Adjusts a given control in a Faust DSP instance.
 * [faustgen](opcodes/faustgen.md): Compiles, Instantiates and runs a compiled Faust program.
 * [faustplay](opcodes/faustplay.md): Runs an instantiated Faust program.
-
-
-## jsfx
-
-jsfx support for csound
-
-* [jsfx](opcodes/jsfx.md): Instantiates and runs a jsfx script 
-* [jsfx_new](opcodes/jsfx_new.md): Instantiates a jsfx script 
-* [jsfx_play](opcodes/jsfx_play.md): Processes audio through a jsfx script 
-* [jsfx_getslider](opcodes/jsfx_getslider.md): Gets a slider value of a jsfx instance 
-* [jsfx_setslider](opcodes/jsfx_setslider.md): Sets the slider values of a jsfx script 
-* [tubeharmonics](opcodes/tubeharmonics.md): A distortion with control for odd/even harmonics 
-
-
-## chua
-
-opcodes using libsndfile
-
-* [chuap](opcodes/chuap.md): Simulates Chua's oscillator, an LRC oscillator with an active resistor, proved capable of bifurcation and chaotic attractors.
 
 
 ## Fluid opcodes
