@@ -72,23 +72,26 @@ jsfx support for csound
 
 opcodes using libsndfile
 
-* [filereadmeta](opcodes/filereadmeta.md): Read metadata from a soundfile 
+* [chuap](opcodes/chuap.md): Simulates Chua's oscillator, an LRC oscillator with an active resistor, proved capable of bifurcation and chaotic attractors.
 
 
-## else
+## Fluid opcodes
 
-Miscellaneous plugins
+The fluid family of opcodes wraps Peter Hannape's SoundFont 2 player
 
-* [accum](opcodes/accum.md): Simple accumulator of scalar values 
-* [atstop](opcodes/atstop.md): Schedule an instrument at the end of the current instrument 
-* [bisect](opcodes/bisect.md): Returns the fractional index of a value within a sorted array / tab 
-* [crackle](opcodes/crackle.md): generates noise based on a chaotic equation 
-* [cuetrig](opcodes/cuetrig.md): Generate a trigger at given time values 
-* [deref](opcodes/deref.md): Dereference a previously created reference to a variable 
-* [detectsilence](opcodes/detectsilence.md): Detect when input falls below an amplitude threshold 
-* [diode_ringmod](opcodes/diode_ringmod.md): A ring modulator with optional non-linearities 
-* [extendarray](opcodes/extendarray.md): Extend one array with the contents of a second array, in place 
-* [fileexists](opcodes/fileexists.md): Returns 1 if a file exists and can be read 
+* [fluidAllOut](opcodes/fluidAllOut.md): Receiving audio from all FluidSynth engines.
+* [fluidCCi](opcodes/fluidCCi.md): Sending a controller message at i-time to a FluidSynth engine's MIDI channel.
+* [fluidCCk](opcodes/fluidCCk.md): Sending a controller message at k-rate to a FluidSynth engine's MIDI channel.
+* [fluidControl](opcodes/fluidControl.md): Playing and controlling loaded Soundfonts (using 'raw' MIDI messages).
+* [fluidEngine](opcodes/fluidEngine.md): Instantiating a FluidSynth engine.
+* [fluidLoad](opcodes/fluidLoad.md): Loading SoundFonts.
+* [fluidNote](opcodes/fluidNote.md): Playing a note on a FluidSynth engine's MIDI channel.
+* [fluidOut](fluidOut.md): Receiving audio from a single FluidSynth engine. 
+* [fluidProgramSelect](opcodes/fluidProgramSelect.md): Assigning presets from a SoundFont to a FluidSynth engine's MIDI channel. 
+* [fluidSetInterpMethod](opcodes/fluidSetInterpMethod.md): setting interpolation method for a channel in a FluidSynth engine.
+
+  ## Fluid opcodes
+  
 * [findarray](opcodes/findarray.md): Find an element in an array 
 * [frac2int](opcodes/frac2int.md): Convert the fractional part of a number into an integer 
 * [ftfill](opcodes/ftfill.md): create a table and fill it with values (like fillarray but for f-tables) 
