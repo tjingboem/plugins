@@ -7,7 +7,15 @@ This is a collection of plugins for [csound](https://csound.com/)
 
 ## Ableton Link opcodes
 
-A technology that synchronizes musical beat, tempo, and phase across multiple applications running on one or more devices.
+The purpose of Ableton Link is to synchronize musical time, beat, and phase between musical applications performing in real time from separate programs, processes, and network addresses. This is useful, e.g., for laptop orchestras.
+
+Ableton Live is not required to use the Ableton Link protocol, as it is a peer-to-peer protocol. There is one Link session on the local area network that maintains a global time, tempo, and beat. Any peer may set the tempo, and thereafter all peers in the session share that tempo. A process may have any number of peers (i.e., any number of Link objects). Each peer may also define its own "quantum" i.e. some multiple of the beat, e.g. a quantum of 4 might imply 1 beat every measure of 4/4 time. The phase of the time is defined w.r.t the quantum, e.g. phase 0.5 of a quantum of 4 would be the second beat of the measure. Peers may read and write timelines with local time, beat, and phase, counting from when the peer is enabled, but the tempo and beat on all timelines for all peers in the session will coincide.
+
+The first peer in a session determines the initial tempo. After that, the tempo is changed only, and whenever, any peer explicity calls the set tempo functon (link_tempo_set, in Csound).
+
+The Link tempo is independent of the Csound score tempo. Performances that need to synchronize the score tempo with the Link tempo may use the tempo opcode to set the score tempo from the Link tempo; or conversely, set the Link tempo from the score tempo using the tempoval opcode.
+
+Please note, the phase and beat obtained or set by these opcodes is only as precise as allowed by the duration of Csound's kperiod, the audio driver used by Csound, network latency and stability, and the system's most precise clock.
 
 * [link_create](opcodes/link_create.md): Creates an Ableton Link peer object.
 * [link_enable](opcodes/link_enable.md): Enable/disable synchronization with the network Ableton Link session tempo and beat.
@@ -36,14 +44,16 @@ A parallel computing platform and application programming interface that allows 
 * [cudasynth](opcodes/cudasynth.md): Synthesis by additive synthesis and inverse FFT. 
 
 
-## beosc
+## Faust opcodes
 
-Band-enhanced oscillators implementing the sine+noise synthesis model
+The Faust opcodes allows access from within Csound to the Faust language. Faust (Functional Audio Stream) is a functional programming language for sound synthesis and audio processing: https://faust.grame.fr/.
 
-* [beosc](opcodes/beosc.md): Band-Enhanced Oscillator 
-* [beadsynt](opcodes/beadsynt.md): Band-Enhanced Oscillator-Bank 
-* [getrowlin](opcodes/getrowlin.md): opy a row from a 2D array or table, with interpolation between rows 
-* [tabrowlin](opcodes/tabrowlin.md): Copy a row from an f-table to another, interpolating between rows 
+* [faustaudio](opcodes/faustaudio.md): Instantiates and runs a compiled Faust program.
+* [faustcompile](opcodes/faustcompile.md): Produce a instantiable DSP process from a Faust program.
+* [faustdsp](opcodes/faustdsp.md): Instantiates a Faust program.
+* [faustctl](opcodes/faustctl.md): Adjusts a given control in a Faust DSP instance.
+* [faustgen](opcodes/faustgen.md): Compiles, Instantiates and runs a compiled Faust program.
+* [faustplay](opcodes/faustplay.md): Runs an instantiated Faust program.
 
 
 ## jsfx
@@ -58,7 +68,7 @@ jsfx support for csound
 * [tubeharmonics](opcodes/tubeharmonics.md): A distortion with control for odd/even harmonics 
 
 
-## sndmeta
+## chua
 
 opcodes using libsndfile
 
